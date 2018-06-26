@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel_table.c                                  :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffloris <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/02 17:41:14 by ffloris           #+#    #+#             */
-/*   Updated: 2018/05/17 10:09:12 by ffloris          ###   ########.fr       */
+/*   Created: 2018/06/26 13:51:59 by ffloris           #+#    #+#             */
+/*   Updated: 2018/06/26 13:52:00 by ffloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel_table(char **arr)
+long long		ft_atoll(const char *str)
 {
-	size_t	i;
+	unsigned long long	nbr;
+	int					neg;
 
-	i = 0;
-	while (arr[i])
-		free(arr[i++]);
-	free(arr);
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-')
+	{
+		neg = 1;
+		str++;
+	}
+	else
+	{
+		neg = 0;
+		if (*str == '+')
+			str++;
+	}
+	nbr = 0;
+	while (ft_isdigit(*str))
+	{
+		nbr = nbr * 10 + (*str - '0');
+		str++;
+	}
+	return (neg) ? -(long long)nbr : (long long)nbr;
 }

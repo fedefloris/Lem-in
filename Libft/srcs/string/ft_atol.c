@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel_table.c                                  :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffloris <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/02 17:41:14 by ffloris           #+#    #+#             */
-/*   Updated: 2018/05/17 10:09:12 by ffloris          ###   ########.fr       */
+/*   Created: 2018/06/26 13:51:54 by ffloris           #+#    #+#             */
+/*   Updated: 2018/06/26 13:51:56 by ffloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel_table(char **arr)
+long	ft_atol(const char *str)
 {
-	size_t	i;
-
-	i = 0;
-	while (arr[i])
-		free(arr[i++]);
-	free(arr);
+	return ((long)ft_atoll(str));
 }

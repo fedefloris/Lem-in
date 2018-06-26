@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akaseris <akaseris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/03 13:39:16 by ffloris           #+#    #+#             */
-/*   Updated: 2018/05/20 16:06:16 by ffloris          ###   ########.fr       */
+/*   Updated: 2018/06/07 14:45:06 by akaseris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int						ft_memcmp(const void *s1, const void *s2, size_t n);
 void					ft_swap(int *a, int *b);
 void					ft_quicksort(int *a, int a_size);
 int						ft_is_sorted(int *a, int a_size);
+char					**ft_strtable(size_t row_size, size_t col_size);
 void					ft_strdel_table(char **arr);
 void					ft_struct_del(void *el, size_t el_size);
 size_t					ft_strlen(const char *s);
@@ -67,8 +68,10 @@ char					*ft_strnstr(const char *haystack,
 											const char *needle, size_t len);
 int						ft_strcmp(const char *s1, const char *s2);
 int						ft_strncmp(char const *s1, char const *s2, size_t n);
-long					ft_atoi(const char *s);
-long					ft_atoi_n(const char *s, size_t n);
+int						ft_atoi(const char *s);
+int						ft_atoi_n(const char *s, size_t n);
+long					ft_atol(const char *s);
+long long				ft_atoll(const char *s);
 int						ft_isspace(int c);
 int						ft_isalpha(int c);
 int						ft_isdigit(int c);
@@ -97,8 +100,10 @@ int						ft_strnequ(char const *s1, char const *s2, size_t n);
 char					*ft_strsub(char const *s,
 											unsigned int start, size_t len);
 char					*ft_strjoin(char const *s1, char const *s2);
+char					*ft_strjoinfree(char *ret, char *s1, char *s2);
 char					*ft_strtrim(char const *s);
 char					**ft_strsplit(char const *s, char c);
+char					**ft_split(char const *s);
 char					*ft_itoa(int n);
 char					*ft_itoa_base(int n, int base);
 void					ft_putchar(char c);

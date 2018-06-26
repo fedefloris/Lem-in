@@ -16,12 +16,15 @@ GCC_FLAGS = -Werror -Wextra -Wall
 
 OBJS_DIR = objs
 SRCS_DIR = srcs
-SRCS_INCLUDES_DIR = includes/
+SRCS_INCLUDES_DIR = includes
 
 LIBFT_DIR = libft
 LIBFT_FILE = $(LIBFT_DIR)/libft.a
 LIBFT_INCLUDES_DIR = $(LIBFT_DIR)/includes/
 INCLUDE_DIRS = -I$(SRCS_INCLUDES_DIR) -I$(LIBFT_INCLUDES_DIR)
+
+INCLUDES_FILES = lem_in
+HEADERS = $(addsuffix .h, $(patsubst %, $(SRCS_INCLUDES_DIR)/%, $(INCLUDES_FILES)))
 
 FILES = main free_line free_room free_farm is_comment skip_comments \
 		skip_commands get_command parse_input parse_ants \
@@ -45,14 +48,14 @@ norm:
 comp_libft:
 	@make -C $(LIBFT_DIR)/
 
-$(NAME): $(LIBFT_FILE) $(OBJS_DIR) $(OBJS_WITH_DIR)
+$(NAME): $(LIBFT_FILE) $(OBJS_DIR) $(HEADERS) $(OBJS_WITH_DIR)
 	@echo "Lem_in:" $(GREEN_COLOR) $(NAME) $(DEFAULT_COLOR)
 	@gcc $(GCC_FLAGS) $(OBJS_WITH_DIR) -o $(NAME) $(LIBFT_FILE) $(INCLUDE_DIRS)
 
 $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
 
-$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c $(HEADERS)
 	@echo "Lem_in:" $(GREEN_COLOR) $< $(DEFAULT_COLOR)
 	@gcc $(GCC_FLAGS) -c $< -o $@ $(INCLUDE_DIRS)
 

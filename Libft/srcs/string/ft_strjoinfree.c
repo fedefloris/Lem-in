@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel_table.c                                  :+:      :+:    :+:   */
+/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffloris <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/02 17:41:14 by ffloris           #+#    #+#             */
-/*   Updated: 2018/05/17 10:09:12 by ffloris          ###   ########.fr       */
+/*   Created: 2018/06/26 10:21:35 by ffloris           #+#    #+#             */
+/*   Updated: 2018/06/26 10:21:39 by ffloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel_table(char **arr)
+char	*ft_strjoinfree(char *ret, char *s1, char *s2)
 {
-	size_t	i;
+	char *str;
 
-	i = 0;
-	while (arr[i])
-		free(arr[i++]);
-	free(arr);
+	if (!s1 && !s2)
+		return (NULL);
+	str = ft_strjoin(s1, s2);
+	if (ret)
+		free(ret);
+	return (str);
 }
