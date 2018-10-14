@@ -9,10 +9,10 @@ The goal is moving *n* ants, initially located in the same node, to an *end* nod
 For more details look at the [subject](subject.pdf)
 
 ## Usage
-```
+```console
 git clone https://github.com/fedefloris/Lem_in.git && cd Lem_in && make
 ```
-```
+```console
 ./lem-in < maps/subject.map
 ```
 ## License
