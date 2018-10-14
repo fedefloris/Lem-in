@@ -4,7 +4,7 @@ A pathfinding algorithm.
 ## What is Lem_in?
 Lem_in is an algorithmic 42 project focused on pathfinding algorithms.
 
-The goal is moving *n* ants, initially located in the same node, to an *end* node.
+The goal is moving *n* ants from start node to the end node in a graph.
 
 For more details look at the [subject](subject.pdf)
 
