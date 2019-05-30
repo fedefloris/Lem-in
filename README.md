@@ -1,5 +1,4 @@
 # Lem_in - 42Born2Code
-![](https://img.shields.io/github/license/fedefloris/Lem_in.svg)
 
 ## What is Lem_in?
 Lem_in is an algorithmic 42 project focused on pathfinding algorithms.
