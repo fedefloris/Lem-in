@@ -1,7 +1,7 @@
-# Lem_in - 42Born2Code
+# Lem-in - 42Born2Code
 
-## What is Lem_in?
-Lem_in is an algorithmic 42 project focused on pathfinding algorithms.
+## What is Lem-in?
+Lem-in is an algorithmic 42 project focused on pathfinding algorithms.
 
 The goal is moving *n* ants from start node to the end node in a graph.
 
