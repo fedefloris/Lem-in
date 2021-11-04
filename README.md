@@ -3,9 +3,9 @@
 ## What is Lem-in?
 Lem-in is an algorithmic 42 project focused on pathfinding algorithms.
 
-The goal is moving *n* ants from start node to the end node in a graph.
+The goal is moving *n* ants from the start node to the end node in a graph.
 
-For more details look at the [subject](subject.pdf)
+For more details, look at the [subject](subject.pdf)
 
 ## Usage
 ```console
